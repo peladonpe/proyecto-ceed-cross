@@ -18,6 +18,12 @@ de los proporcionados, lo único que variará son las letras generadas dentro de
 Debe utilizar las mismas clases en los elementos, y no puedes añadir estilos o clases adicionales.
 Se puede añadir un id a los elementos si lo necesitas.
 
+Puedes añadir un script en la página para incluir tu código.
+
+### Fondo
+
+El fondo de la aplicación está en la carpeta resources. Debes incluirlo en tu proyecto en la carpeta adecuada.
+
 ### Iconos
 
 Para que los iconos se muestren debes añadir las dependencias al proyecto:
@@ -35,10 +41,12 @@ Los datos de las casillas del juego los puedes obtener de la siguiente manera:
 const game = new Game(id);
 const wordPositions = game.worPositions;
 ```
+
 Le puedes pasar un `id` a `Game` para obtener una partida específica, o bien no pasarle nada
 y obtener una aleatoria. El `id` va de cero al número de juegos definidos en `./lib/game.js` menos uno.
 
 La clase `Game` la puedes importar de `./lib/Game.js`. La estructura de `wordPositions` es:
+
 ```js
 [
   {
@@ -56,9 +64,9 @@ La estructura devuelta siempre colocará el juego lo más izquierda y lo más ar
 en grid de la aplicación. Para ello, tienes que utilizar la función center de `./lib/center.js`. La función recibe cuatro parámetros:
 
 - `maxColumn`: Máxima columna que ocupan las casillas. Por ejemplo, si el juego tiene cinco columnas la máxima
-columna será la 4 (la primera columna es la 0)
+  columna será la 4 (la primera columna es la 0)
 - `maxRow`: Máxima fila que ocupan las casillas. Por ejemplo, si el juego ocupa tres filas la máxima fila será la 2
-(la primera fila es la 0)
+  (la primera fila es la 0)
 - `gridWidth`, `gridHeight`: tamaño del grid. Será 10x10
 
 Devolverá un array `[despX, despY]` que indicará cuánto hay que desplazar las casillas para que queden centradas.
@@ -92,12 +100,9 @@ requiere el número de letras a situar en el círculo y devolverá un array de o
 que indicarán la posición de cada letra. Por ejemplo:
 
 ```js
-console.log(calculateLetterPositions(2))
-
-[
-  { left: '50%', top: '20%' },
-  { left: '49.99999999999999%', top: '80%' }
-]
+console.log(calculateLetterPositions(2))[
+  ({ left: "50%", top: "20%" }, { left: "49.99999999999999%", top: "80%" })
+];
 ```
 
 Debes asignar estas posiciones a cada una de las letras.
@@ -106,7 +111,6 @@ Debes asignar estas posiciones a cada una de las letras.
 
 Consulta el [ejemplo de funcionamiento](https://ceed-cross.netlify.app) para entender mejor cómo tienen que funcionar
 las líneas.
-
 
 - Al pulsar el botón izquierdo del ratón sobre una letra:
   - Se aplicará la clase `selected` a la letra
@@ -129,11 +133,9 @@ Debes asignar la longitud a la propiedad `width` y a la propiedad `transform` de
 Por ejemplo:
 
 ```js
-const origin = [10,20]
-const end = [30,40]
+const origin = [10, 20];
+const end = [30, 40];
 
-const { length, angle } = lengthAndAngle(origin, end)
+const { length, angle } = lengthAndAngle(origin, end);
 // Asignar el valor de length a la propiedad width de la línea y el valor de angle a la propiedad transform
 ```
-
-

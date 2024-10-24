@@ -1,7 +1,7 @@
 /*
 Necesitarás eslint 9 versión 9.11 o superior y eslint-plugin-html 8 versión 8.1.2 o superior
 */
-import htmlPlugin from "eslint-plugin-html"
+import htmlPlugin from "eslint-plugin-html";
 
 export default [
   {
@@ -9,7 +9,7 @@ export default [
       html: htmlPlugin,
     },
     files: ["**/*.html", "**/*.js"],
-    ignores: ["**/dist/*"],
+    ignores: ["**/dist/**"],
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "module",
@@ -20,12 +20,12 @@ export default [
         browser: true,
         es2021: true,
         jest: true,
-        node: true
+        node: true,
       },
     },
     linterOptions: {
       noInlineConfig: true,
-      reportUnusedDisableDirectives: true
+      reportUnusedDisableDirectives: true,
     },
     rules: {
       complexity: ["error", { max: 5 }],
@@ -87,4 +87,4 @@ export default [
       "valid-typeof": "error",
     },
   },
-]
+];

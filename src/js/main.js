@@ -3,7 +3,7 @@ import "../lib/fontawesome";
 import { Game } from "../lib/Game";
 import center from "../lib/center";
 
-const id = 3;
+const id = 5;
 
 const game = new Game(id);
 const wordPositions = game.wordPositions;

@@ -22,9 +22,7 @@ const GAME_1 = {
     ["bar", { origin: [2, 2], direction: "horizontal" }],
   ]),
 };
-/**
- * ESTOY AQUI
- */
+
 const GAME_2 = {
   letters: "abria",
   words: new Map([
